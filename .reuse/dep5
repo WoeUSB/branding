@@ -1,0 +1,12 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: WoeUSB branding
+Upstream-Contact: 林博仁(Buo-ren, Lin) <Buo.Ren.Lin@gmail.com>
+Source: https://github.com/WoeUSB/branding
+
+Files: README.md
+Copyright: 2021 林博仁(Buo-ren, Lin) <Buo.Ren.Lin@gmail.com>
+License: GPL-3.0-or-later
+
+Files: icon/"Gnome?HIG?compliant?icon"?by?Lorenzo?Ragni/*
+Copyright: 2021 Lorenzo Ragni <lorenzo.ragni@outlook.it>
+License: GPL-3.0-or-later
