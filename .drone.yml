@@ -1,0 +1,45 @@
+# Drone CI configuration file
+#
+# Reference:
+#   - Drone CI / CD | Drone
+#     https://docs.drone.io/
+#   - Docker Pipelines | Drone
+#     https://docs.drone.io/quickstart/docker/
+#
+# This file is based on The Common Drone CI Configuration Templates project:
+# https://github.com/Lin-Buo-Ren/common-drone-ci-configs
+#
+# Copyright 2021 林博仁(Buo-ren, Lin) <Buo.Ren.Lin@gmail.com>
+# SPDX-License-Identifier: CC-BY-SA-4.0
+
+kind: pipeline
+type: docker
+name: Default pipeline based on the Docker runner
+
+# Change default clone behavior
+# https://docs.drone.io/pipeline/docker/syntax/cloning/
+clone:
+  depth: 1
+
+  # Whether to disable certificate verification over the HTTPS protocol
+  skip_verify: False
+
+steps:
+  - name: Fetching Git tags
+    image: alpine/git
+    # Allow failure as this stop won't work when running the build via `drone exec`
+    failure: ignore
+    commands:
+      - git fetch --tags
+
+  # - name: Fetching Git submodules
+  #   image: alpine/git
+  #   commands:
+  #   - git submodule update --init
+
+  - name: Static code analysis
+    depends_on:
+      - Fetching Git tags
+    image: alpine:3.12
+    commands:
+      - ./continuous-integration/static-code-analysis.sh

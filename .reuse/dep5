@@ -7,6 +7,10 @@ Files: README.md icon/README.md
 Copyright: 2021 林博仁(Buo-ren, Lin) <Buo.Ren.Lin@gmail.com>
 License: GPL-3.0-or-later
 
+Files: continuous-integration/README.md
+Copyright: 2021 林博仁(Buo-ren, Lin) <Buo.Ren.Lin@gmail.com>
+License: CC-BY-SA-4.0
+
 Files: icon/"Gnome?HIG?compliant?icon"?by?Lorenzo?Ragni/*
 Copyright: 2021 Lorenzo Ragni <lorenzo.ragni@outlook.it>
 License: GPL-3.0-or-later
